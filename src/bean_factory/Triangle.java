@@ -2,8 +2,14 @@ package bean_factory;
 
 public class Triangle {
 
-	
-	public void draw(){
-		System.out.println("draw triangle");
+	private String type;
+
+	public String getType() {
+		return type;
+	}
+
+
+	public void draw() {
+		System.out.println(getType()+ " draw triangle");
 	}
 }
