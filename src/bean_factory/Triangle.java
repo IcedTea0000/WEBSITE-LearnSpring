@@ -1,24 +1,22 @@
 package bean_factory;
 
+import java.util.List;
+
 public class Triangle {
 
-	private String type;
-	private int height;
+	private List<Point> points;
 
-	public Triangle(String type,int height){
-		this.type=type;
-		this.height=height;
+	public List getPoints() {
+		return points;
 	}
-	
-	public String getType() {
-		return type;
-	}
-	
-	public int getHeight(){
-		return height;
+
+	public void setPoints(List points) {
+		this.points = points;
 	}
 
 	public void draw() {
-		System.out.println(getType()+ " draw triangle height of " +getHeight());
+		for (Point point : points) {
+			System.out.println("draw triangle from point1 (x=" + point.getX() + ", y=" + point.getY() + ")");
+		}
 	}
 }

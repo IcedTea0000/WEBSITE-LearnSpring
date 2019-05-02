@@ -8,8 +8,28 @@
 
 
 	<bean id="triangle" class="bean_factory.Triangle">
-		<constructor-arg index="0" value="Johny Triangle" />
-		<constructor-arg index="1" value="20" />
+		<property  name="points">
+			<list>
+				<ref bean="point1" />
+				<ref bean="point2" />
+				<ref bean="point3" />
+			</list>
+		</property>		
 	</bean>
+	
+	<bean id="point1" class="bean_factory.Point">
+		<property name="x" value="0"  />
+		<property name="y" value="0"  />	
+	</bean>
+
+	<bean id="point2" class="bean_factory.Point">
+		<property name="x" value="10" />
+		<property name="y" value="20" />
+	</bean>	
+	
+	<bean id="point3" class="bean_factory.Point">
+		<property name="x" value="30" />
+		<property name="y" value="50" />
+ 	</bean>
 
 </beans>        
