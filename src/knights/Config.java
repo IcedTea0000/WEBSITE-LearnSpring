@@ -8,7 +8,8 @@ public class Config {
 
 	@Bean
 	public Knight knight() {
-		return new BraveKnight(quest());
+		//return new BraveKnight(quest());
+		return null;
 	}
 
 	@Bean
