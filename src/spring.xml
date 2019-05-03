@@ -19,6 +19,9 @@
 		<property name="point3" ref="point3" />
 	</bean>
 	
+	<bean id="circle" class="bean_factory.Circle">
+		<property name="center" ref="point1" />
+	</bean>
 	
 	<bean id="point1" class="bean_factory.Point">
 		<property name="x" value="0"  />

@@ -23,8 +23,8 @@ public class DrawingApp {
 			//Triangle triangle2 = (Triangle) context.getBean("triangle2");
 			//triangle2.draw();
 
-			Triangle triangle3 = (Triangle) context.getBean("triangle3");
-			triangle3.draw();
+			Shape shape = (Shape) context.getBean("circle");
+			shape.draw();
 		} catch (Exception e) {
 
 		}
