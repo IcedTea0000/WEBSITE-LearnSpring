@@ -34,5 +34,7 @@
 		<property name="x" value="30" />
 		<property name="y" value="50" />
  	</bean>
+ 	
+ 	<bean class="bean_factory.DisplayNameBeanPostProcessor" />
 
 </beans>        
