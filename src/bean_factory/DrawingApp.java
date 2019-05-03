@@ -8,14 +8,25 @@ import org.springframework.core.io.FileSystemResource;
 
 public class DrawingApp {
 
-	public static void main(String[] args){
-		//Triangle triangle=new Triangle();
-		//triangle.draw();
-		//BeanFactory factory=new XmlBeanFactory(new FileSystemResource("spring.xml"));
-		
-		ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
-		Triangle triangle=(Triangle)context.getBean("triangle");
-		triangle.draw();
-		
+	public static void main(String[] args) {
+		// Triangle triangle=new Triangle();
+		// triangle.draw();
+		// BeanFactory factory=new XmlBeanFactory(new
+		// FileSystemResource("spring.xml"));
+
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+
+		try {
+			//Triangle triangle1 = (Triangle) context.getBean("triangle1");
+			//triangle1.draw();
+
+			//Triangle triangle2 = (Triangle) context.getBean("triangle2");
+			//triangle2.draw();
+
+			Triangle triangle3 = (Triangle) context.getBean("triangle3");
+			triangle3.draw();
+		} catch (Exception e) {
+
+		}
 	}
 }
