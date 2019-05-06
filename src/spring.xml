@@ -16,13 +16,9 @@
 	</bean>
 	
 	<bean id="triangle3" class="bean_factory.Triangle" parent="triangle2">
-		<property name="point3" ref="point3" />
+		<property name="point3" ref="center" />
 	</bean>
-	
-	<bean id="circle" class="bean_factory.Circle">
-		<property name="center" ref="point1" />
-	</bean>
-	
+		
 	<bean id="point1" class="bean_factory.Point">
 		<property name="x" value="0"  />
 		<property name="y" value="0"  />	
@@ -33,10 +29,12 @@
 		<property name="y" value="20" />
 	</bean>	
 	
-	<bean id="point3" class="bean_factory.Point">
+	<bean id="center" class="bean_factory.Point">
 		<property name="x" value="30" />
 		<property name="y" value="50" />
  	</bean>
+ 	
+ 	<context:component-scan base-package="bean_factory"></context:component-scan>
  	
  	<bean class="bean_factory.DisplayNameBeanPostProcessor" />
 

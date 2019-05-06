@@ -1,5 +1,8 @@
 package bean_factory;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Circle implements Shape {
 
 	private Point center;
@@ -10,13 +13,9 @@ public class Circle implements Shape {
 		return center;
 	}
 
-
-
 	public void setCenter(Point center) {
 		this.center = center;
 	}
-
-
 
 	@Override
 	public void draw() {
