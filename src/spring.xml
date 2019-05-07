@@ -1,41 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
 
-	<bean id="triangle1" class="bean_factory.Triangle" >
-		<property name="point1" ref="point1" />
+
+	<!-- bean_factory package -->
+	<!-- <bean id="triangle1" class="bean_factory.Triangle" > <property name="point1" 
+		ref="point1" /> </bean> <bean id="triangle2" class="bean_factory.Triangle" 
+		parent="triangle1"> <property name="point2" ref="point2" /> </bean> <bean 
+		id="triangle3" class="bean_factory.Triangle" parent="triangle2"> <property 
+		name="point3" ref="center" /> </bean> <bean id="point1" class="bean_factory.Point"> 
+		<property name="x" value="0" /> <property name="y" value="0" /> </bean> <bean 
+		id="point2" class="bean_factory.Point"> <property name="x" value="10" /> 
+		<property name="y" value="20" /> </bean> <bean id="center" class="bean_factory.Point"> 
+		<property name="x" value="30" /> <property name="y" value="50" /> </bean> 
+		<context:component-scan base-package="bean_factory"></context:component-scan> 
+		<bean class="bean_factory.DisplayNameBeanPostProcessor" /> -->
+
+	<!-- Aop Examples -->
+
+	<aop:aspectj-autoproxy />
+
+	<bean name="triangle" class="spring_aop.model.Triangle">
+		<property name="name" value="triangle name" />
 	</bean>
 
-	<bean id="triangle2" class="bean_factory.Triangle" parent="triangle1">
-		<property name="point2" ref="point2" />
-	</bean>
-	
-	<bean id="triangle3" class="bean_factory.Triangle" parent="triangle2">
-		<property name="point3" ref="center" />
-	</bean>
-		
-	<bean id="point1" class="bean_factory.Point">
-		<property name="x" value="0"  />
-		<property name="y" value="0"  />	
+	<bean name="circle" class="spring_aop.model.Circle">
+		<property name="name" value="circle name" />
 	</bean>
 
-	<bean id="point2" class="bean_factory.Point">
-		<property name="x" value="10" />
-		<property name="y" value="20" />
-	</bean>	
-	
-	<bean id="center" class="bean_factory.Point">
-		<property name="x" value="30" />
-		<property name="y" value="50" />
- 	</bean>
- 	
- 	<context:component-scan base-package="bean_factory"></context:component-scan>
- 	
- 	<bean class="bean_factory.DisplayNameBeanPostProcessor" />
+	<bean name="service" class="spring_aop.service.ShapeService"
+		autowire="byName">
+	</bean>
+
+	<bean name="loggingAspect" class="spring_aop.aspects.LoggingAspect" />
 
 </beans>        
