@@ -22,21 +22,8 @@
 		<bean class="bean_factory.DisplayNameBeanPostProcessor" /> -->
 
 	<!-- Aop Examples -->
+	
+	
 
-	<aop:aspectj-autoproxy />
-
-	<bean name="triangle" class="spring_aop.model.Triangle">
-		<property name="name" value="triangle name" />
-	</bean>
-
-	<bean name="circle" class="spring_aop.model.Circle">
-		<property name="name" value="circle name" />
-	</bean>
-
-	<bean name="service" class="spring_aop.service.ShapeService"
-		autowire="byName">
-	</bean>
-
-	<bean name="loggingAspect" class="spring_aop.aspects.LoggingAspect" />
-
+	<bean id="circleImpl" class="jdbc.CircleImpl"></bean>
 </beans>        
